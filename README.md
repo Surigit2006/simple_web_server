@@ -22,6 +22,7 @@ Testing the webserver.
 
 # PROGRAM:
 views.py
+```
 from django.shortcuts import render,HttpResponse
 from http.server import HTTPServer,BaseHTTPRequestHandler
 
@@ -192,9 +193,9 @@ print("This is my webserver")
 server_address = ('',8000)
 httpd = HTTPServer(server_address,Myserver)
 httpd.serve_forever()
-
+```
 urls.py
-
+```
 from django.contrib import admin
 from django.urls import include, path
 
@@ -202,15 +203,16 @@ urlpatterns = [
     path("", include("lapspec.urls")),
     path('admin/', admin.site.urls)
 ]
+```
 lapspec/urls.py
-
+```
 from django.urls import path
 from lapspec import views
 
 urlpatterns = [
     path("", views.lapspec, name="lapspec"),
 ]
-
+```
 # OUTPUT:
 ![Screenshot 2024-12-19 091421](https://github.com/user-attachments/assets/bbed0c35-d1ca-4d55-a150-77e8b308516d)
 
